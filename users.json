@@ -4,7 +4,7 @@
     "password": "Sep@2025#",
     "company": "tvs",
     "isActive": true,
-    "expiry": "01-04-2026",
+    "expiry": "01-04-2030",
     "details": {
       "Gstin": "36AFHFS4680J1ZH",
       "LglNm": "SAVERA AUTOCRAFT LLP",
@@ -24,7 +24,7 @@
     "password": "Oct@2025#",
     "company": "tvs",
     "isActive": true,
-    "expiry": "01-04-2026",
+    "expiry": "01-04-2030",
     "details": {
       "Gstin": "36AAFCL0077Q1Z1",
       "LglNm": "LAXMI AUTO AGENCIES PRIVATE LIMITED",
@@ -44,7 +44,7 @@
     "password": "Devi@2025#",
     "company": "Royal Enfield",
     "isActive": true,
-    "expiry": "01-04-2026",
+    "expiry": "01-04-2030",
     "details": {
       "Gstin": "36AAWFD9162A1Z7",
       "LglNm": "DEVI AUTOMOBILES",
@@ -64,7 +64,7 @@
     "password": "digitals@2025#",
     "company": "LAXMI DIGITALS",
     "isActive": false,
-    "expiry": "01-04-2026",
+    "expiry": "01-04-2030",
     "details": {
       "Gstin": "36EEZPS3505H1ZV",
       "LglNm": "LAXMI DIGITALS",
