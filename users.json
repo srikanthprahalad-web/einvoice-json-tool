@@ -1,0 +1,82 @@
+{
+  "savera": {
+    "username": "14929",
+    "password": "Sep@2025#",
+    "company": "tvs",
+    "isActive": true,
+    "expiry": "01-04-2026",
+    "details": {
+      "Gstin": "36AFHFS4680J1ZH",
+      "LglNm": "SAVERA AUTOCRAFT LLP",
+      "Addr1": "PLOT NO 22/5-3,NH 7",
+      "Addr2": "KAMAREDDY",
+      "Loc": "KAMAREDDY",
+      "Pin": 503111,
+      "Pos": "36",
+      "Stcd": "36",
+      "Ph": 9866530909,
+      "Em": null
+    },
+    "keys": ["2", "savera-1", "savera_1"]
+  },
+  "laxmi": {
+    "username": "14517",
+    "password": "Oct@2025#",
+    "company": "tvs",
+    "isActive": true,
+    "expiry": "01-04-2026",
+    "details": {
+      "Gstin": "36AAFCL0077Q1Z1",
+      "LglNm": "LAXMI AUTO AGENCIES PRIVATE LIMITED",
+      "Addr1": "1-13-173,VINAYAK NAGAR,NIZAMABAD",
+      "Addr2": "NIZAMABAD",
+      "Loc": "NIZAMABAD",
+      "Pin": 503001,
+      "Pos": "36",
+      "Stcd": "36",
+      "Ph": 9440090930,
+      "Em": null
+    },
+    "keys": ["1", "laxmi-1", "laxmi_1"]
+  },
+  "devi": {
+    "username": "14298",
+    "password": "Devi@2025#",
+    "company": "Royal Enfield",
+    "isActive": true,
+    "expiry": "01-04-2026",
+    "details": {
+      "Gstin": "36AAWFD9162A1Z7",
+      "LglNm": "DEVI AUTOMOBILES",
+      "Addr1": "Flat no 286,MADHAVA NAGAR,Nizamabad",
+      "Addr2": "NIZAMABAD",
+      "Loc": "NIZAMABAD",
+      "Pin": 503230,
+      "Pos": "36",
+      "Stcd": "36",
+      "Ph": 7207013435,
+      "Em": null
+    },
+    "keys": ["3", "devi-3", "devi-3"]
+  },
+  "laxmiDigitial": {
+    "username": "LAXMI DIGITALS",
+    "password": "digitals@2025#",
+    "company": "LAXMI DIGITALS",
+    "isActive": false,
+    "expiry": "01-04-2026",
+    "details": {
+      "Gstin": "36EEZPS3505H1ZV",
+      "LglNm": "LAXMI DIGITALS",
+      "Addr1": "PLOT NO 286,MADHAVA NAGAR,NIZAMABAD",
+      "Addr2": "NIZAMABAD",
+      "Loc": "NIZAMABAD",
+      "Pin": 503001,
+      "Pos": "36",
+      "Stcd": "36",
+      "Ph": 9502363435,
+      "Em": null
+    },
+    "keys": ["4", "digital-4", "digital-4"]
+  }
+}

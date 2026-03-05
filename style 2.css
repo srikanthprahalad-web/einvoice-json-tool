@@ -1,0 +1,301 @@
+/* ---------------------------------------------
+   GLOBAL THEME
+----------------------------------------------*/
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #3730a3;
+  --secondary: #eef2ff;
+  --bg: #f7f8fa;
+  --card-bg: #ffffff;
+  --text: #111;
+  --border: #d4d4d4;
+  --radius: 10px;
+  --shadow: 0 4px 15px rgba(0,0,0,0.08);
+  --transition: 0.2s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Google Sans", sans-serif;
+}
+
+body {
+  background: var(--bg);
+  padding-bottom: 5rem;
+}
+
+/* ---------------------------------------------
+   NAVBAR
+----------------------------------------------*/
+nav {
+  background: var(--card-bg);
+  padding: 1rem 2rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+nav .nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+nav .nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  transition: var(--transition);
+}
+
+nav .nav-links a:hover,
+nav .nav-links .active {
+  background: var(--primary);
+  color: #fff;
+}
+
+.logout-btn {
+  background: var(--primary);
+  color: #fff !important;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 23px;
+  height: 3px;
+  background: var(--text);
+  border-radius: 3px;
+}
+
+/* ---------------------------------------------
+   HEADERS + GENERAL TITLES
+----------------------------------------------*/
+.header {
+  margin: 1.5rem;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+/* ---------------------------------------------
+   FORM UI
+----------------------------------------------*/
+form {
+  width: 85%;
+  margin: 1.2rem auto;
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+fieldset {
+  border: 1px solid var(--border);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: var(--radius);
+}
+
+legend {
+  padding: 0 0.5rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* Inputs */
+input, select {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  margin-top: 0.4rem;
+  margin-bottom: 0.9rem;
+}
+
+/* Buttons */
+.form-button, .btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.form-button:hover,
+.btn:hover {
+  background: var(--primary-dark);
+}
+
+/* ---------------------------------------------
+   ITEM LOCK MASK
+----------------------------------------------*/
+.mask {
+  padding: 2rem;
+  text-align: center;
+  background: #f4f4f4;
+  border-radius: var(--radius);
+  border: 2px dashed var(--primary);
+}
+
+.mask .icon i {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+/* ---------------------------------------------
+   BULK CARD
+----------------------------------------------*/
+.card {
+  width: 85%;
+  margin: 2rem auto;
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.card-header h3 {
+  color: var(--primary);
+}
+
+.card-subtitle {
+  opacity: 0.8;
+  margin-top: 4px;
+}
+
+.field label {
+  display: block;
+  font-weight: 600;
+}
+
+.field input, .field select {
+  margin-top: 0.4rem;
+}
+
+/* Dropzone */
+.dropzone {
+  border: 2px dashed var(--primary);
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.dropzone:hover,
+.dropzone.drag-over {
+  background: var(--secondary);
+}
+
+/* File Info */
+.file-info {
+  margin-top: 0.6rem;
+  background: var(--secondary);
+  padding: 0.7rem;
+  border-radius: var(--radius);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.remove-btn {
+  padding: 4px 9px;
+  background: crimson;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+/* ---------------------------------------------
+   MERGE JSON SECTION
+----------------------------------------------*/
+.json-merger-container {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: var(--secondary);
+  border-radius: var(--radius);
+}
+
+.merge-btn {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+/* ---------------------------------------------
+   OUTPUT PREVIEW
+----------------------------------------------*/
+#output {
+  width: 90%;
+  margin: 1rem auto;
+  background: #1e1e1e;
+  color: #0ff568;
+  padding: 1rem;
+  border-radius: var(--radius);
+  overflow-x: auto;
+  font-family: monospace;
+}
+
+/* ---------------------------------------------
+   FOOTER
+----------------------------------------------*/
+.footer {
+  text-align: center;
+  padding: 2rem;
+  background: var(--card-bg);
+  margin-top: 2rem;
+}
+
+/* ---------------------------------------------
+   RESPONSIVE
+----------------------------------------------*/
+@media (max-width: 768px) {
+  nav .nav-links {
+    position: absolute;
+    top: 70px;
+    right: -200px;
+    flex-direction: column;
+    background: var(--card-bg);
+    padding: 1rem;
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    transition: 0.3s;
+  }
+
+  nav .nav-links.open {
+    right: 10px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  form,
+  .card {
+    width: 95%;
+  }
+}
