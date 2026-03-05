@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Basic required -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <!-- Title & primary description -->
+  <title>E-Invoice Generator By MinaByte</title>
+  <meta name="description" content=" E-Invoice Generator. Create, download and manage GST-compliant electronic invoices exclusively for Laxmi Auto Agencies' authorized transactions." />
+  
+  <!-- Site & app related -->
+  <meta name="application-name" content="E-Invoice Generator" />
+  <link rel="icon" href="logo.jpg" type="image/x-icon" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="E-Invoice Generator" />
+  <meta property="og:description" content="Generate GST-compliant electronic invoices (e-invoices) exclusively. Download JSON, preview invoices and manage invoice data." />
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/papaparse/5.4.1/papaparse.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  <!-- Add this before your script.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <!-- Styles & scripts -->
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <script defer src="login.js"></script>
+  <script defer src="applySettings.js"></script>
+  
+  <!-- Favicon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <link rel="icon" href="images/logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <!-- Add in your <head> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+</head>
+
+<body>
+  <nav>
+    <h1 class="logo">E-Invoice Generator</h1>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    
+    <div class="nav-links" id="navLinks">
+      <a class="active" href="index.html">Home</a>
+      <a class="" href="Routes/docs.html">Docs</a>
+      <a class="" href="Routes/settings.html">Settings</a>
+      <a id="logoutBtn" href="#" class="logout-btn"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</a>
+    </div>
+  </nav>
+  <h2 class="header">Please login first</h2>
+  <h2 class="header" id="expiry">Expiry</h2>
+  <h2 class="header">E-Invoice Form</h2>
+
+  <!-- Place near your header -->
+  <!-- Login Form -->
+  <div class="login-container hidden">
+    <form class="login-form">
+      <h2 class="login-title">E-invoice Login</h2>
+      
+      <div class="field disabled">
+        <label for="username">Dealer code</label>
+        <input type="text" id="username" name="username">
+      </div>
+      
+      <div class="field disabled">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password">
+        <p id="login-status"> </p>
+        <button type="submit" class="btn">Login</button>
+        
+      </div>
+      
+      <div class="field login-key-container">
+        <label for="login-key">Login with Key</label>
+        <input type="text" id="login-key" name="login-key">
+        <p id="login-key-status"> </p>
+        <button type="button" onclick="loginWithKey()" class="btn">Login with Key</button>
+      </div>
+      
+    </form>
+  </div>
+  <form id="invoiceForm">
+    <fieldset>
+      <legend>Document Details</legend>
+      Document Category: <input type="text" disabled value="B2B">
+      Reverse Charge: <input type="text" disabled value="NO">
+      Document Type: <input type="text" disabled value="Tax Invoice">
+      Document No: <span class="highlight">*</span> <input type="text" required id="docNo" value="" placeholder="enter_inv_number">
+      Document Date: <span class="highlight">*</span> <input type="date" required id="docDate" value="">
+    </fieldset>
+    
+    <fieldset class="seller-details" disabled>
+      <legend>Seller Details</legend>
+      GSTIN: <input type="text" id="sellerGstin" value="">
+      Legal Name: <input type="text" id="sellerName" value="">
+      Address1: <input type="text" id="sellerAddr1" value="">
+      Location: <input type="text" id="sellerLoc" value="">
+      Pin: <input type="number" id="sellerPin" value="">
+      State Code: <input type="text" id="sellerStcd" value="">
+      Phone: <input type="text" id="sellerPh" value="9440090930">
+    </fieldset>
+    
+    <fieldset>
+      <legend>Buyer Details</legend>
+      <label for="buyerSelector">Choose Buyer: <span class="highlight">*</span></label>
+      <select required id="buyerSelector" onchange="populateBuyerDetails()">
+        <!-- Options will be added dynamically -->
+      </select>
+      
+      <div class="buyer-details">
+        GSTIN: <input type="text" id="buyerGstin" disabled>
+        Legal Name: <input type="text" id="buyerName" disabled>
+        Address1: <input type="text" id="buyerAddr1" disabled>
+        Location: <input type="text" id="buyerAddr2" class="hidden" disabled>
+        <input type="text" id="buyerLoc" disabled>
+        <input type="number" id="buyerPin" class="hidden" disabled>
+        <input type="text" id="buyerPos" class="hidden" disabled>
+        <input type="text" id="buyerStcd" class="hidden" disabled>
+      </div>
+    </fieldset>
+    <div id="itemsContainer">
+      <div class="mask">
+        <div class="icon">
+          <i class="fa-solid fa-lock"></i>
+        </div>
+        <h3>
+          Please Select the Buyer to add Item Details...
+        </h3>
+      </div>
+    </div>
+    <fieldset>
+      <h4>Total Summary</h4>
+      <div class="buttons-container">
+        <div class="total-amount">
+          Total Taxable: <input type="text" value="00" id="total-taxable" readonly>
+          Total IGST: <input type="text" value="00" id="total-igst" disabled>
+          Total SGCT: <input type="text" value="00" id="total-sgst" disabled>
+          Total CGST: <input type="text" value="00" id="total-cgst" disabled>
+          Total Tax Amount: <input type="text" value="00" id="total-tax-amount" readonly>
+          Final Invoice value :<input type="text" value="00" id="total-amount" readonly>
+        </div>
+        <button type="button" class="form-button" onclick="addItem()">Add Item +</button>
+        <br>
+        <button type="submit" class="form-button" onclick="">Generate JSON </button>
+      </div>
+    </fieldset>
+  </form>
+  <!-- Bulk Upload Card -->
+  <section class="card bulk-card" role="region" aria-labelledby="bulk-title">
+    <header class="card-header disabled">
+      <h3 id="bulk-title">Bulk Invoice Upload</h3>
+      <p class="card-subtitle">Upload a CSV with <code>invDate,invNo, description, taxable, percentage,hsn,isService</code></p>
+    </header>
+    
+    <div class="card-body disabled">
+      <div class="field">
+        <label for="buyerSelect">Buyer (applies to all rows)</label>
+        <select id="bulkBuyerSelect"></select>
+      </div>
+      
+      <div class="field">
+        <label for="csvFile">CSV File</label>
+        
+        <!-- Dropzone -->
+        <div class="dropzone" id="csvDrop">
+          <input type="file" id="csvFile" accept=".csv" />
+          <span>Drag & drop CSV here, or click to browse</span>
+        </div>
+        
+        <!-- File info row (hidden by default) -->
+        <div id="fileInfo" class="file-info" style="display:none;">
+          <span id="fileName"></span>
+          <button id="removeFile" type="button" class="remove-btn">x</button>
+        </div>
+      </div>
+      
+      <details class="hint">
+        <summary>CSV format help</summary>
+        <a href="bulk_invoice_format.csv" download="bulk_invoice_format.csv">📥 Download Sample CSV</a>
+      </details>
+    </div>
+    
+    <footer class="card-footer disabled">
+      <button type="button" class="btn" onclick="generateBulkInvoices()">Generate ZIP</button>
+    </footer>
+    <!-- =========================
+ JSON Invoice Merger Component
+========================= -->
+    <div class="json-merger-container">
+      <h3>Merge Invoice JSON Files</h3>
+      
+      <!-- Drag & Drop Area -->
+      <div id="dropZone" class=" dropzone">
+        Drag & Drop JSON files here or click to select
+        <input type="file" id="fileInput" accept=".json" multiple hidden>
+      </div>
+      
+      <button id="mergeBtn" class="merge-btn" disabled>Merge & Download</button>
+    </div>
+    
+    <div class="json-merger-container disabled">
+      <h3>Merge Dms JSON and generate JSON Files</h3>
+      
+      <!-- Drag & Drop Area -->
+      <div id="dmsDropZone" class=" dropzone">
+        Drag & Drop JSON files here or click to select
+        <input type="file" id="fileInput" accept=".json" multiple hidden>
+      </div>
+      
+      <button id="dmsMergeBtn" class="merge-btn" disabled>Merge & Download</button>
+    </div>
+    
+    
+    <!-- JSZip Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    
+    <script>
+      const dropZone = document.getElementById("dropZone");
+      const fileInput = document.getElementById("fileInput");
+      const mergeBtn = document.getElementById("mergeBtn");
+      let selectedFiles = [];
+      
+      // Drag & drop handlers
+      dropZone.addEventListener("click", () => fileInput.click());
+      dropZone.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        dropZone.classList.add("drag-over");
+      });
+      dropZone.addEventListener("dragleave", () => {
+        dropZone.classList.remove("drag-over");
+      });
+      dropZone.addEventListener("drop", (e) => {
+        e.preventDefault();
+        dropZone.classList.remove("drag-over");
+        handleFiles(e.dataTransfer.files);
+      });
+      
+      fileInput.addEventListener("change", (e) => {
+        handleFiles(e.target.files);
+      });
+      
+      function handleFiles(files) {
+        selectedFiles = [...selectedFiles, ...files];
+        if (selectedFiles.length > 0) {
+          mergeBtn.disabled = false;
+          dropZone.textContent = `${selectedFiles.length} file(s) selected`;
+        }
+      }
+      
+      // Merge + Download
+      mergeBtn.addEventListener("click", async () => {
+        let mergedInvoices = [];
+        
+        // Read & parse files
+        for (let file of selectedFiles) {
+          const text = await file.text();
+          try {
+            const data = JSON.parse(text);
+            if (Array.isArray(data)) {
+              mergedInvoices.push(...data);
+            } else {
+              console.warn(`${file.name} is not an array`);
+            }
+          } catch (err) {
+            console.error("Invalid JSON in", file.name, err);
+          }
+        }
+        
+        if (mergedInvoices.length === 0) {
+          alert("No valid invoices found!");
+          return;
+        }
+        
+        // Sort invoices (by invoice number or date if present)
+        mergedInvoices.sort((a, b) => {
+          if (a.invoiceNumber && b.invoiceNumber) {
+            return a.invoiceNumber - b.invoiceNumber;
+          }
+          return 0; // fallback
+        });
+        
+        // Split into chunks of 15
+        const zip = new JSZip();
+        let fileCount = 1;
+        for (let i = 0; i < mergedInvoices.length; i += 20) {
+          const chunk = mergedInvoices.slice(i, i + 20);
+          const blobContent = JSON.stringify(chunk, null, 2);
+          zip.file(`merged_invoices_part${fileCount}.json`, blobContent);
+          fileCount++;
+        }
+        
+        // Create ZIP
+        const content = await zip.generateAsync({ type: "blob" });
+        const url = URL.createObjectURL(content);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "merged_invoices.zip";
+        a.click();
+        URL.revokeObjectURL(url);
+      });
+    </script>
+    
+    <style>
+      .json-merger-container {
+        margin: 1rem 0;
+        padding: 1rem;
+        border-radius: 10px;
+        background: var(--bg-color, #f9f9f9);
+      }
+      
+      
+      
+      .drop-zone.drag-over {
+        background: var(--secondary-color, #f0e6f9);
+      }
+      
+      .merge-btn {
+        padding: 0.6rem 1.2rem;
+        background: var(--primary-color, #6a0dad);
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      
+      .merge-btn:disabled {
+        background: #aaa;
+        cursor: not-allowed;
+      }
+    </style>
+  </section>
+  <h3>Output JSON:</h3>
+  <pre id="output">NO DATA TO DISPLAY!</pre>
+  <!-- Shortcut Tips Container -->
+  <section class="donate-section">
+    <h3>Buy Me a Coffee ☕</h3>
+    <p>
+      I made this software free for everyone.<br>
+      If it helped you and you love it, consider supporting me with a coffee ❤️
+    </p>
+    
+    <img src="QR.jpg" alt="Donate QR Code" class="donate-qr">
+    
+    <small>Scan this QR Code with your UPI app to dontate me :)</small>
+    <small>Thank you for your support!</small>
+  </section>
+  <footer class="footer">
+    
+    <h3>Made with love by Nandhu!</h3>
+  </footer>
+</body>
+
+</html>
