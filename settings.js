@@ -704,7 +704,31 @@ const actualBuyerMap = {
     Stcd: "33",
     Ph: null,
     Em: null
-  }
+  },
+  36ADWFS8338Q1ZP": {
+    Gstin: "36ADWFS8338Q1ZP",
+    LglNm: "SREE TULASI AUTOMOTIVE LLP",
+    Addr1: "Hyderabad",
+    Addr2: "Hyderabad",
+    Loc: "Hyderabad",
+    Pin: 500082,
+    Pos: "33",
+    Stcd: "33",
+    Ph: null,
+    Em: null
+   },
+36AAGFL3640P1ZX": 
+{
+    Gstin: "36AAGFL3640P1ZX",
+    LglNm: "LCGC MOTORS LLP",
+    Addr1: "Hyderabad",
+    Addr2: "Hyderabad",
+    Loc: "Hyderabad",
+    Pin: 500082,
+    Pos: "33",
+    Stcd: "33",
+    Ph: null,
+    Em: null 
 };
 
 function sortBuyerMapByName(buyerMap) {
