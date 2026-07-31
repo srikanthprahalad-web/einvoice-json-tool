@@ -628,6 +628,19 @@ const actualBuyerMap = {
     Stcd: "36",
     Ph: null,
     Em: null
+  },
+  
+  "36ADWFS8338Q1ZP": {
+    Gstin: "36ADWFS8338Q1ZP",
+    LglNm: "SREE TULASI AUTOMOTIVE LLP",
+    Addr1: "GROUND FLOOR, H No. 1-19-72/57, Kapra GHMC Circle, Gramakantam, Naya Kranthi Nagar, Hyderabad,",
+    Addr2: "Medchal Malkajgiri",
+    Loc: "Medchal Malkajgiri,",
+    Pin: 500062,
+    Pos: "36",
+    Stcd: "36",
+    Ph: null,
+    Em: null
   }
 };
 
