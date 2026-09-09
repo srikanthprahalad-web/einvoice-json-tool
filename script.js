@@ -117,6 +117,29 @@ const actualBuyerMap = {
     "Ph": null,
     "Em": null
   },
+  Gstin: "36AAACH2702H1Z1",
+    LglNm: "HDFC Bank Ltd.",
+    Addr1: "6/1/73 3RD FLOOR, SAEED PLAZA, LAKDIKAPUL, HYDERABAD",
+    Addr2: "Hyderabad",
+    Loc: "Hyderabad",
+    Pin: 500004.,
+    Pos: "36",
+    Stcd: "33",
+    Ph: null,
+    Em: null
+},
+  Gstin: "36AAACC1226H1Z5",
+    LglNm: "CHOLAMANDALAM INVESTMENT AND FINANCE CO LTD",
+    Addr1: "1ST FLOOR, 7-1-59/2, 59/6, 102, MANDHANA
+TOWERS, Hyderabad",
+    Addr2: "Hyderabad",
+    Loc: "Hyderabad",
+    Pin: 500016 ,
+    Pos: "36",
+    Stcd: "33",
+    Ph: null,
+    Em: null
+},
   "33AAACS7032B1ZZ": {
     Gstin: "33AAACS7032B1ZZ",
     LglNm: "TVS MOTOR COMPANY LTD",
