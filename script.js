@@ -117,6 +117,8 @@ const actualBuyerMap = {
     "Ph": null,
     "Em": null
   },
+  
+  "36AAACH2702H1Z1": {
   Gstin: "36AAACH2702H1Z1",
     LglNm: "HDFC Bank Ltd.",
     Addr1: "6/1/73 3RD FLOOR, SAEED PLAZA, LAKDIKAPUL, HYDERABAD",
@@ -128,6 +130,7 @@ const actualBuyerMap = {
     Ph: null,
     Em: null
 },
+    "36AAACC1226H1Z5": {
   Gstin: "36AAACC1226H1Z5",
     LglNm: "CHOLAMANDALAM INVESTMENT AND FINANCE CO LTD",
     Addr1: "1ST FLOOR, 7-1-59/2, 59/6, 102, MANDHANA
