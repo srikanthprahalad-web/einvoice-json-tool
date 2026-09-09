@@ -667,7 +667,7 @@ TOWERS, Hyderabad",
     Stcd: "36",
     Ph: null,
     Em: null
-  }
+  },
 };
 
 function sortBuyerMapByName(buyerMap) {
