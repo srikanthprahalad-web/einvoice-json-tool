@@ -126,7 +126,7 @@ const actualBuyerMap = {
     Loc: "Hyderabad",
     Pin: 500004,
     Pos: "36",
-    Stcd: "33",
+    Stcd: "36",
     Ph: null,
     Em: null
   },
@@ -138,7 +138,7 @@ const actualBuyerMap = {
     Loc: "Hyderabad",
     Pin: 500016,
     Pos: "36",
-    Stcd: "33",
+    Stcd: "36",
     Ph: null,
     Em: null
   },
