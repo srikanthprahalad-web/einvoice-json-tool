@@ -666,6 +666,30 @@ const actualBuyerMap = {
     Stcd: "36",
     Ph: null,
     Em: null
+  },
+  "36ACNFA3826F1ZE": {
+    Gstin: "36ACNFA3826F1ZE",
+    LglNm: "AUTOSPHERE LLP",
+    Addr1: "2-4-84, Yadava Reddy Nagar, PVNR Expressway, X Road, Upperpally, Hyderabad, Rangareddy,",
+    Addr2: "Rangareddy",
+    Loc: "Rangareddy,",
+    Pin: 500048,
+    Pos: "36",
+    Stcd: "36",
+    Ph: null,
+    Em: null
+  },
+  "36AAZFV9098C1Z7": {
+    Gstin: "36AAZFV9098C1Z7",
+    LglNm: "VAJRA PRIME MOTOCORP LLP",
+    Addr1: "H NO.22-113, MALKAJGIRI, R K NAGAR, Secunderabad, Medchal Malkajgiri,",
+    Addr2: "Medchal Malkajgiri",
+    Loc: "Medchal Malkajgiri,",
+    Pin: 500047,
+    Pos: "36",
+    Stcd: "36",
+    Ph: null,
+    Em: null
   }
 };
 
